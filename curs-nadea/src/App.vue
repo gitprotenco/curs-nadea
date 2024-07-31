@@ -1,68 +1,55 @@
 <template lang="html">
-  <div class="carduri-produse">
-    <!-- <nav class="navbar">
-       <div class="logo">MyWebsite</div>
-    </nav> -->
-  <product-card
-    v-for="product in products"
-    :key="product.id"
-    :title="product.title"
-    :price="product.price"
-    :img="product.img"/>
-</div>
+  <header class="header">
+    <img class="logo-img" src="https://images.vexels.com/media/users/3/211753/isolated/preview/66f8cae1cdeb029a6e93200b5768c38a-bathroom-label-makeup-icon.png">
+    <h4 class="info">Livrare gratuita de la 385 MDL ! </h4>
+
+   <router-link to="/home" class="buton-acasa">Acasa</router-link>
+
+   <router-link to="/about" class="buton-despre">Despre Magazin</router-link>
+
+</header>
+<router-view></router-view>
+
 </template>
 
 <script>
-// import { Component, Vue } from 'vue-property-decorator';
-import ProductCard from "./components/ProductCardComponent.vue";
-// import ContainerComponent from './components/ContainerComponent.vue'; 
-
-// @Component( {
-//   components: { 
-//     ContainerComponent,
-//     ProductCard
-//   }
-// })
-
-// export default class HomeView extends Vue {
-
 export default {
-  components: {
-    ProductCard, },
-
-  data()  {
-    return {
-      products: [
-        {id: 0, 
-        title:'Mască regeneratoare',
-        price: '200',
-        img: 'https://i.makeup.md/6/6t/6tfyn3bdegkr.jpg' },
-
-        {id: 1, 
-        title:'Mască hidratantă', 
-        price: '200',
-        img: 'https://licilasicdn.s3.amazonaws.com/public/product_images/39496/main/original.jpg'},
-
-        {id: 2, 
-        title:'Mască păr uscat',
-        price: '300',
-        img: 'https://i.makeup.md/c/c5/c5s7jacaezx0.jpg'},
-
-        {id: 3, 
-        title:'Mască păr blond', 
-        price: '300',
-        img: 'https://m.media-amazon.com/images/I/71NDyeo3vBL._AC_UF1000,1000_QL80_.jpg'
-        }
-      ]
-    }
-  }
-}
+  name: 'App'}
 </script>
 
-<style lang="css">
-.carduri-produse{
+<style lang="css" scoped>
+.logo-img{
+  width:90px;
+  height:90px;
+  margin-bottom:15px;
+}
+
+.info {
+  margin-left: 30px;
+}
+
+.header{
+  font-family: "Poiret One", sans-serif;
+  padding-left: 30px;
+  display:flex;
+  align-items: center;
+  background-color: rgb(216, 216, 216);
+  height: 65px;}
+
+  .buton-acasa{
+    color:rgb(45, 67, 103);
+    margin-left: 750px;}
+
+  .buton-despre{
+    color:rgb(45, 67, 103);
+    margin-left: 45px; }
+
+    .carduri-produse{
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 20px; }
-  
-</style>
+ 
+
+
+ </style>

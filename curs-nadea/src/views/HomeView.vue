@@ -1,53 +1,128 @@
 <template>
-<div>pag  acasa</div>
+ <div class="carduri-produse">
+  <ProductCard
+    v-for="product in products"
+    :key="product.id"
+    :title="product.title"
+    :price="product.price"
+    :img="product.img"
+    :brand="product.brand"/>
+</div>
 </template>
 
-
 <script>
-
-import ProductCard from "./components/ProductCardComponent.vue"
-
-export default class HomeView extends Vue {
-
+import ProductCard from '../components/ProductCardComponent.vue';
 
 
 export default {
-  components: {
-    ProductCard, },
+  name: 'HomeView',
+  components: {ProductCard,},
 
-  data() {
+  data () {
     return {
       products: [
         {id: 0, 
         title:'Mască regeneratoare',
         price: '200',
-        img: 'https://i.makeup.md/6/6t/6tfyn3bdegkr.jpg' },
+        brand: 'Garnier Fructis',
+        img: 'https://i.makeup.md/6/6t/6tfyn3bdegkr.jpg'},
 
         {id: 1, 
         title:'Mască hidratantă', 
         price: '200',
+        brand: 'Garnier Fructis',
         img: 'https://licilasicdn.s3.amazonaws.com/public/product_images/39496/main/original.jpg'},
 
         {id: 2, 
         title:'Mască păr uscat',
         price: '300',
+        brand: 'Garnier Fructis',
         img: 'https://i.makeup.md/c/c5/c5s7jacaezx0.jpg'},
 
         {id: 3, 
         title:'Mască păr blond', 
         price: '300',
-        img: 'https://m.media-amazon.com/images/I/71NDyeo3vBL._AC_UF1000,1000_QL80_.jpg'}
+        brand: 'Garnier Fructis',
+        img: 'https://m.media-amazon.com/images/I/71NDyeo3vBL._AC_UF1000,1000_QL80_.jpg'},
+
+        {id: 4, 
+        title:'Mască păr deteriorat', 
+        price: '300',
+        brand: 'Garnier Fructis',
+        img: 'https://i.makeup.md/i/ip/ip1uuun2wkxw.jpg'},
+        
+
+        {id: 5, 
+        title:'Mască păr ars', 
+        price: '300',
+        brand: 'Garnier Fructis',
+        img: 'https://licilasicdn.s3.amazonaws.com/public/product_images/39495/main/original.jpg'},
+
+        {id: 6, 
+        title:'Mască cu Goji', 
+        price: '300',
+        brand: 'Garnier Fructis',
+        img: 'https://confiseriedubonheur.net/Stalk3r_hGeDKFxAmyy7H5pn/wp-content/uploads/2021/02/YTURTJHJGFJGHJ.webp'},
+
+        {id: 7, 
+        title:'Balsam de curățare', 
+        price: '388',
+        brand: 'Heimish All Clean Balm Blister',
+        img: 'https://pwa-api.eva.ua/img/512/512/resize/7/3/731476_1_1689872901.jpg'},
+
+        {id: 8, 
+        title:'Mască de față', 
+        price: '516',
+        brand: 'Heimish Black Tea Mask Pack',
+        img: 'https://i.makeup.md/v/vx/vxwxhldwpjly.jpg'},
+
+        {id: 9  , 
+        title:'Patch-uri pentru față', 
+        price: '540',
+        brand: 'Heimish Bulgarian Rose Eye Patch',
+        img: 'https://pureseoul.co.uk/cdn/shop/products/HEIMISH-Bulgarian-Rose-Water-hydrogel-eye-patch.jpg?v=1584712712'},
+
+        {id: 10, 
+        title:'Cremă de față SPF20', 
+        price: '274',
+        brand: 'LOreal Paris Skin Expert',
+        img: 'https://i.makeup.md/i/ih/ihsjirg7rmae.png'},
+
+        {id: 11, 
+        title:'Gel-cremă de față', 
+        price: '658',
+        brand: 'Clinique Moistur Spectrum SPF 25',
+        img: 'https://i.makeup.md/2/2j/2joltwvmdmor.jpg'},
+
+        {id: 12, 
+        title:'Cremă corectoare ', 
+        price: '945',
+        brand: 'Clinique Superdefense SPF 25',
+        img: 'https://ovico.md/media/catalog/product/cache/1/image/630x/49b3216a00853856695f75be12b817bb/0/0/0020714904401.jpg'},
+
+        {id: 13, 
+        title:'Cremă cu efect lifting', 
+        price: '2206',
+        brand: 'Estee Lauder Resilience',
+        img: 'https://www.gleek.gr/170855-large_default/estee-lauder-resilience-lift-night-lifting-firming-face-neck-creme.jpg'},
+
+        {id: 14, 
+        title:'Cremă de zi pentru față', 
+        price: '1491',
+        brand: 'Clinique Moistur Spectrum SPF 25',
+        img: 'https://www.pandashop.md/i/products/126/1263937.jpg'}
       ]
-    }
+    };
   },
 }
-}
+
 </script>
 
 <style lang="css">
-.carduri-produse{
+nav {
   display: flex;
-  justify-content: center;
-  gap: 20px; }
-  
+  gap: 10px;
+}
 </style>
+
+
