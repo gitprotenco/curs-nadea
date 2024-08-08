@@ -1,13 +1,18 @@
 <template lang="html">
   <header class="header">
     <img class="logo-img" src="https://images.vexels.com/media/users/3/211753/isolated/preview/66f8cae1cdeb029a6e93200b5768c38a-bathroom-label-makeup-icon.png">
+
     <h4 class="info">Livrare gratuita de la 385 MDL ! </h4>
-
-   <router-link to="/home" class="buton-acasa">Acasa</router-link>
-
-   <router-link to="/about" class="buton-despre">Despre Magazin</router-link>
-
+    <div class="routes">
+        <router-link to="/acasa" class="route-acasa">Acasa</router-link>
+        <router-link to="/livrare" class="route-livrare">Livrare</router-link>
+        <router-link to="/product" class="route-product"></router-link>
+        <router-link to="/about" class="route-despre">Despre Magazin</router-link>
+        <router-link to="/addProduct" class="route-addProduct">Add Product</router-link>
+    </div>
+    
 </header>
+
 <router-view></router-view>
 
 </template>
@@ -36,20 +41,29 @@ export default {
   background-color: rgb(216, 216, 216);
   height: 65px;}
 
-  .buton-acasa{
+.route-acasa{
     color:rgb(45, 67, 103);
-    margin-left: 750px;}
+    margin-left: 650px;}
 
-  .buton-despre{
+.route-despre{
     color:rgb(45, 67, 103);
     margin-left: 45px; }
 
-    .carduri-produse{
+.route-livrare {
+  color:rgb(45, 67, 103);
+    margin-left: 45px;
+}   
+
+.carduri-produse{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px; }
+
+.route-addProduct {
+  color:rgb(45, 67, 103);
+  margin-left: 45px;
+
+}
  
-
-
  </style>

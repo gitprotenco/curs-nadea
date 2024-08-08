@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="card-component">
+  <div class="card-component" @click="viewProduct">
       <img class="card-img" :src="img" :alt="title">
       <h2> {{title}} </h2>
       <p class="brand">{{ brand }}</p>
@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 
 export default {
   name: 'ProductCard',
@@ -18,25 +17,22 @@ export default {
   title: String,
   price: Number,
   img: String,
-  brand: String },
+  brand: String ,
+  id: Number},
 
-  data() {
-    return {
-      products: []
-    };
-  },
-  mounted() {
-    axios.get('http://localhost:3000/products')
-      .then(response => {
-        this.products = response.data;
-        console.log(this.products);
-      })
-      .catch(error => {
-        console.error('There was an error fetching the products:', error);
-      });
+  methods: {
+    viewProduct() {
+      console.log('Navigating to:', `/product/${this.id}`);
+      this.$router.push(`/product/${this.id}`);
+    } }
 
-      }
-    }
+  // data() {
+  //   return {
+  //     products: []
+  //   };
+  // },
+
+
  
 // data() {
 //   return {
@@ -63,6 +59,7 @@ export default {
 
 <style lang="css">
 .card-component {
+  font-family: "Poiret One", sans-serif;
   font-size: 13px;
   line-height: 10px;
   width: 250px;
