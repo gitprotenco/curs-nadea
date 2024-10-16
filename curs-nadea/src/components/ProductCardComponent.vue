@@ -30,7 +30,6 @@ export default {
       this.$router.push(`/product/${this.id}`);
     },
     addToCart(product) {
-      // Logica pentru adăugarea produsului în coș
       console.log(`Produs adăugat în coș:`, product);
     } },
 };
