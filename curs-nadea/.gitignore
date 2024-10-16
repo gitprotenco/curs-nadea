@@ -2,6 +2,11 @@
 node_modules
 /dist
 
+# Ignoră directoarele de configurare și cache
+.cache/
+.vscode/
+node_modules/
+*.log
 
 # local env files
 .env.local
