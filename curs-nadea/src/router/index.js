@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue';
 import AboutView from '../views/AboutView.vue';
 import ProductView from '@/views/ProductView.vue';
 import LivrareView from '../views/LivrareView.vue';
+import SlideView from '../views/SlideView.vue';
 import AddProductView from '../views/AddProductView.vue';
 const routes = [
     {
@@ -23,7 +24,7 @@ const routes = [
           },
 
     {
-    path: '/product',
+    path: '/product/:id',
     component: ProductView,
     name : 'Product'
     },
@@ -36,7 +37,12 @@ const routes = [
     path: '/addProduct',
     component: AddProductView,
     name : 'AddProduct'
-    },            
+    },         
+    {
+    path: '/slide/:id', 
+    component: SlideView,
+    name: 'SlideView', 
+    },   
 ]
 
 const router = createRouter({
